@@ -6,6 +6,26 @@ let gameover=new Audio("applause.mp3")
 let turn="X"
 let isgameover=false;
 
+// music_back.play()
+let volOn = false;
+let sound = document.getElementById('sound');
+// console.log(sound);
+sound.addEventListener('click',()=>{
+    // console.log(sound.getAttribute('src'));
+    if (sound.getAttribute('src')=='Mute.jpeg'){
+        sound.setAttribute('src','Unmute.jpeg');
+        volOn = true;
+        music_back.loop = true;
+        music_back.play();
+    }
+    else{
+        sound.setAttribute('src','Mute.jpeg');
+        volOn = false;
+        music_back.pause();
+        audioturn.pause();
+        gameover.pause();
+    }
+});
 
 // function to change the tunr 
 const changeTurn= ()=>{
@@ -38,7 +58,7 @@ Array.from(boxes).forEach(element =>{
     let boxtext=element.querySelector('.boxtext');
     element.addEventListener('click',()=>{
         if(boxtext.innerText===''){
-            music_back.play();
+            // music_back.play();
             boxtext.innerText=turn;
             turn=changeTurn();
             audioturn.play();

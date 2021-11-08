@@ -86,6 +86,14 @@ nav ul{
     font-weight: bolder;
 }
 
+#sound{
+    width: 30px;
+    filter: invert(1);
+    cursor: pointer;
+    /* float: right; */
+    /* margin-left: 80vw; */
+}
+
 
 @media screen and (max-width:1000px){
     .gameContainer{
